@@ -1,0 +1,42 @@
+<ifModule mod_headers.c>
+
+	# Prevent clickjacking (forbids framing by third-party sites)
+	Header set X-Frame-Options sameorigin
+
+	# Prevent content sniffing (MIME sniffing)
+	Header set X-Content-Type-Options nosniff
+
+	# Attempt to enable XSS filters in browsers, if available, and block reflected XSS
+	Header set X-XSS-Protection "1; mode=block"
+
+	# Cache media files for a month
+	<FilesMatch "\.(js|css|jpg|jpeg|png|svg|webp|gif|ico|ogg|mp4|webm)$">
+		Header set Cache-Control max-age=2629800
+	</FilesMatch>
+
+	# Remove response headers that provide no value but leak information
+	Header unset X-Powered-By
+
+	# Disable "ETag" headers so that browsers rely on the "Cache-Control" and "Expires" headers
+	Header unset ETag
+
+	# Enable HTTP Strict Transport Security (HSTS) with a duration of three months
+	# Header set Strict-Transport-Security max-age=7889400
+
+</ifModule>
+
+<IfModule mod_autoindex.c>
+
+	# Turn off directory listings for folders without default documents
+	Options -Indexes
+
+</IfModule>
+
+# Serve "text/plain" and "text/html" documents as UTF-8 by default
+AddDefaultCharset utf-8
+
+# Disable "ETag" headers so that browsers rely on the "Cache-Control" and "Expires" headers
+FileETag None
+
+# Show a custom error document for "404 Not Found" errors
+# ErrorDocument 404 /notFound.html
