@@ -34,6 +34,13 @@
 
 </IfModule>
 
+<IfModule mod_negotiation.c>
+
+	# Disable 'MultiViews' implicit filename pattern matches
+	Options -MultiViews
+
+</IfModule>
+
 # Serve "text/plain" and "text/html" documents as UTF-8 by default
 AddDefaultCharset utf-8
 
