@@ -1,3 +1,5 @@
+# https://github.com/delight-im/htaccess
+
 <ifModule mod_headers.c>
 
 	# Prevent clickjacking (forbids framing by third-party sites)
