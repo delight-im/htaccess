@@ -50,9 +50,13 @@ FileETag None
 # Show a custom error document for "404 Not Found" errors
 # ErrorDocument 404 /notFound.html
 
-# Force 'www' (i.e. redirect the "bare" domain and all subdomains to 'www')
-# RewriteEngine On
-# RewriteCond %{HTTP_HOST} !^$
-# RewriteCond %{HTTP_HOST} !^www\. [NC]
-# RewriteCond %{HTTPS}s ^on(s)|
-# RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+<ifModule mod_rewrite.c>
+
+	# Force 'www' (i.e. redirect the "bare" domain and all subdomains to 'www')
+	# RewriteEngine On
+	# RewriteCond %{HTTP_HOST} !^$
+	# RewriteCond %{HTTP_HOST} !^www\. [NC]
+	# RewriteCond %{HTTPS}s ^on(s)|
+	# RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+</IfModule>
