@@ -52,7 +52,7 @@ FileETag None
 
 <ifModule mod_rewrite.c>
 
-	# Force 'www' (i.e. redirect the "bare" domain and all subdomains to 'www')
+	# Force 'www' (i.e. prefix the "bare" domain and all subdomains with 'www' through permanent redirects)
 	# RewriteEngine On
 	# RewriteCond %{HTTP_HOST} !^$
 	# RewriteCond %{HTTP_HOST} !^www\. [NC]
