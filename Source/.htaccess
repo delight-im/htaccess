@@ -22,9 +22,6 @@
 	# Disable "ETag" headers so that browsers rely on the "Cache-Control" and "Expires" headers
 	Header unset ETag
 
-	# Enable HTTP Strict Transport Security (HSTS) with a duration of six months
-	# Header set Strict-Transport-Security max-age=15778800
-
 </ifModule>
 
 <IfModule mod_autoindex.c>
@@ -47,9 +44,16 @@ AddDefaultCharset utf-8
 # Disable "ETag" headers so that browsers rely on the "Cache-Control" and "Expires" headers
 FileETag None
 
+<ifModule mod_headers.c>
+
+	# Enable HTTP Strict Transport Security (HSTS) with a duration of six months (Uncomment 1 line below)
+	# Header set Strict-Transport-Security max-age=15778800
+
+</ifModule>
+
 <ifModule mod_rewrite.c>
 
-	# Force 'www' (i.e. prefix the "bare" domain and all subdomains with 'www' through permanent redirects)
+	# Force 'www' (i.e. prefix the "bare" domain and all subdomains with 'www' through permanent redirects) (Uncomment 5 lines below)
 	# RewriteEngine On
 	# RewriteCond %{HTTP_HOST} !^$
 	# RewriteCond %{HTTP_HOST} !^www\. [NC]
@@ -58,10 +62,10 @@ FileETag None
 
 </IfModule>
 
-# Prevent access to non-minified CSS and JS
+# Prevent access to non-minified CSS and JS (Uncomment 3 lines below)
 # <FilesMatch "(?<!.min)\.(css|js)$">
 # 	Require all denied
 # </FilesMatch>
 
-# Show a custom error document for "404 Not Found" errors
+# Show a custom error document for "404 Not Found" errors (Uncomment 1 line below)
 # ErrorDocument 404 /notFound.html
