@@ -47,9 +47,6 @@ AddDefaultCharset utf-8
 # Disable "ETag" headers so that browsers rely on the "Cache-Control" and "Expires" headers
 FileETag None
 
-# Show a custom error document for "404 Not Found" errors
-# ErrorDocument 404 /notFound.html
-
 <ifModule mod_rewrite.c>
 
 	# Force 'www' (i.e. prefix the "bare" domain and all subdomains with 'www' through permanent redirects)
@@ -60,3 +57,6 @@ FileETag None
 	# RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 </IfModule>
+
+# Show a custom error document for "404 Not Found" errors
+# ErrorDocument 404 /notFound.html
