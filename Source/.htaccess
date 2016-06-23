@@ -22,8 +22,8 @@
 	# Disable "ETag" headers so that browsers rely on the "Cache-Control" and "Expires" headers
 	Header unset ETag
 
-	# Enable HTTP Strict Transport Security (HSTS) with a duration of three months
-	# Header set Strict-Transport-Security max-age=7889400
+	# Enable HTTP Strict Transport Security (HSTS) with a duration of six months
+	# Header set Strict-Transport-Security max-age=15778800
 
 </ifModule>
 
