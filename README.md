@@ -4,7 +4,7 @@
 
 ## Usage
 
-Copy [`.htaccess`](Source/.htaccess) to your project
+Copy the file [`Source/.htaccess`](Source/.htaccess) to the root of your project
 
 ## Contributing
 
