@@ -1,4 +1,8 @@
-# https://github.com/delight-im/htaccess
+########## BEGIN RECOMMENDED RULES (COMMENT OUT OR UNCOMMENT AS NEEDED) ##########
+
+### htaccess (https://github.com/delight-im/htaccess)
+### Copyright (c) delight.im (https://www.delight.im/)
+### Licensed under the MIT License (https://opensource.org/licenses/MIT)
 
 <ifModule mod_headers.c>
 
@@ -74,3 +78,11 @@ FileETag None
 
 # Show a custom error document for "404 Not Found" errors (Uncomment 1 line below)
 # ErrorDocument 404 /notFound.html
+
+########## END RECOMMENDED RULES ##########
+
+########## BEGIN CUSTOM RULES (YOUR OWN RULES GO HERE) ##########
+
+# Add your rules here ...
+
+########## END CUSTOM RULES ##########
