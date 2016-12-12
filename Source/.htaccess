@@ -69,7 +69,7 @@ FileETag None
 
 # Prevent access to non-minified CSS and JS (Uncomment 3 lines below)
 # <FilesMatch "(?<!.min)\.(css|js)$">
-# 	Require all denied
+#     Require all denied
 # </FilesMatch>
 
 # Show a custom error document for "404 Not Found" errors (Uncomment 1 line below)
