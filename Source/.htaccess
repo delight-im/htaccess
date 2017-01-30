@@ -59,14 +59,18 @@ FileETag None
 
 	RewriteEngine On
 
-	# Force 'www' (i.e. prefix the "bare" domain and all subdomains with 'www' through permanent redirects) (Uncomment 4 lines below)
+	# Force 'www' (i.e. prefix the "bare" domain and all subdomains with 'www' through permanent redirects) (Uncomment 6 lines below)
 	# RewriteCond %{HTTP_HOST} !^$
 	# RewriteCond %{HTTP_HOST} !^www\. [NC]
 	# RewriteCond %{HTTPS}s ^on(s)|
+	# # RewriteCond %{REQUEST_SCHEME} ^http(s)|
+	# # RewriteCond %{SERVER_PORT}s ^443(s)|
 	# RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-	# Force HTTPS (Uncomment 2 lines below)
+	# Force HTTPS (Uncomment 4 lines below)
 	# RewriteCond %{HTTPS} off
+	# # RewriteCond %{REQUEST_SCHEME} http
+	# # RewriteCond %{SERVER_PORT} !443
 	# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 </IfModule>
