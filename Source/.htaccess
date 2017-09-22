@@ -83,6 +83,10 @@ FileETag None
 # Show a custom error document for "404 Not Found" errors (Uncomment 1 line below)
 # ErrorDocument 404 /notFound.html
 
+# Announce contact information for security issues (Uncomment 2 lines below)
+# Header set X-Vulnerability-Disclosure "https://www.example.com/security"
+# Header set X-Security-Contact "security@example.com"
+
 ########## END RECOMMENDED RULES ##########
 
 ########## BEGIN CUSTOM RULES (YOUR OWN RULES GO HERE) ##########
